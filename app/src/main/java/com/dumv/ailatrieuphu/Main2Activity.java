@@ -203,7 +203,6 @@ public class Main2Activity extends AppCompatActivity {
 
     private void KiemTraCauTraLoi(int viTriTraLoi) {
 
-        // Lấy vị trí câu trả lời đúng
         int viTriCauTraLoiDung = -1;
         for (int i = 0; i < dapAnHienTais.size(); i++) {
             if (dapAnHienTais.get(i).isDung()) {
@@ -223,14 +222,12 @@ public class Main2Activity extends AppCompatActivity {
 
     private void TraLoiDung() {
 
-        // Trường hợp hết câu hỏi
         if (cauHois.size() == viTriCauHoiDaXuatHiens.size()) {
 
             txvThuaGame.setVisibility(View.VISIBLE);
             txvThuaGame.setText("You Win!!");
             Toast.makeText(this, "Bạn đã chiến thắng", Toast.LENGTH_SHORT).show();
         }
-        // Trường hợp còn câu hỏi
         else{
             TaoCauHoiMoi();
         }
@@ -259,12 +256,10 @@ public class Main2Activity extends AppCompatActivity {
             }
         }
 
-        // Load câu hỏi
         cauHoiHienTai = cauHois.get(viTriCauHoiHienTai);
         viTriCauHoiDaXuatHiens.add(viTriCauHoiHienTai);
         LoadCauHoi(cauHoiHienTai);
 
-        // Load đáp án
         int soDapAn = 0;
         dapAnHienTais = new ArrayList<>();
         for (int i = 0; i < dapAns.size(); i++) {
