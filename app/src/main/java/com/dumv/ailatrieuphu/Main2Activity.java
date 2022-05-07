@@ -1,5 +1,6 @@
 package com.dumv.ailatrieuphu;
 
+import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +37,7 @@ public class Main2Activity extends AppCompatActivity {
     int soCauHoi;
 
     TextView txvCauHoi, txvCauTL1, txvCauTL2, txvCauTL3, txvCauTL4, txvThuaGame;
+    ImageView troGiup5050Button, troGiupKhanGiaButton;
     CauHoi cauHoiHienTai;
     ArrayList<DapAn> dapAnHienTais;
 
@@ -55,6 +59,8 @@ public class Main2Activity extends AppCompatActivity {
         txvCauTL3 = findViewById(R.id.txvCauTL3);
         txvCauTL4 = findViewById(R.id.txvCauTL4);
         txvThuaGame = findViewById(R.id.txvThuaGame);
+        troGiup5050Button = findViewById(R.id.troGiup5050Button);
+        troGiupKhanGiaButton = findViewById(R.id.troGiupKhanGiaButton);
 
     }
 
@@ -180,6 +186,19 @@ public class Main2Activity extends AppCompatActivity {
                 KiemTraCauTraLoi(3);
             }
         });
+
+        troGiup5050Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                troGiup5050();
+            }
+        });
+        troGiupKhanGiaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                troGiupKhanGia();
+            }
+        });
     }
 
     private void KiemTraCauTraLoi(int viTriTraLoi) {
@@ -226,6 +245,7 @@ public class Main2Activity extends AppCompatActivity {
 
     private void TaoCauHoiMoi() {
 
+        this.setAllVisible();
         boolean trung = true;
         while (trung) {
             viTriCauHoiHienTai = random.nextInt(soCauHoi);
@@ -279,6 +299,120 @@ public class Main2Activity extends AppCompatActivity {
         TaoCauHoiMoi();
         troGiupDoiCauHoi =false;
     }
+
+    boolean troGiup5050 = true;
+    public void troGiup5050(){
+        if (troGiup5050 == false) {
+            return;
+        }
+
+        ArrayList<Integer> viTriDapAnSai = new ArrayList<>();
+        for (int i = 0; i < dapAnHienTais.size(); i++) {
+            if (!dapAnHienTais.get(i).isDung()) {
+                viTriDapAnSai.add(i);
+            }
+        }
+
+        int so1 = random.nextInt(2);
+        int so2 = -1;
+
+        while(true){
+            so2 = random.nextInt(2);
+            if (so1 != so2) {
+                break;
+            }
+        }
+
+        int viTriAn1 = viTriDapAnSai.get(so1);
+        int viTriAn2 = viTriDapAnSai.get(so2);
+
+        switch ( viTriAn1 ) {
+            case  0:
+                txvCauTL1.setVisibility(View.INVISIBLE);
+                break;
+            case  1:
+                txvCauTL2.setVisibility(View.INVISIBLE);
+                break;
+            case  2:
+                txvCauTL3.setVisibility(View.INVISIBLE);
+                break;
+            case  3:
+                txvCauTL4.setVisibility(View.INVISIBLE);
+                break;
+            default:
+        }
+
+        switch ( viTriAn2 ) {
+            case  0:
+                txvCauTL1.setVisibility(View.INVISIBLE);
+                break;
+            case  1:
+                txvCauTL2.setVisibility(View.INVISIBLE);
+                break;
+            case  2:
+                txvCauTL3.setVisibility(View.INVISIBLE);
+                break;
+            case  3:
+                txvCauTL4.setVisibility(View.INVISIBLE);
+                break;
+            default:
+        }
+
+        troGiup5050 = false;
+
+    }
+
+    private void setAllVisible(){
+        txvCauTL1.setVisibility(View.VISIBLE);
+        txvCauTL2.setVisibility(View.VISIBLE);
+        txvCauTL3.setVisibility(View.VISIBLE);
+        txvCauTL4.setVisibility(View.VISIBLE);
+    }
+
+    boolean troGiupKhanGia = true;
+    private void troGiupKhanGia(){
+        if (troGiupKhanGia == false) {
+            return;
+        }
+
+        int viTriDung = -1;
+        for (int i = 0; i < dapAnHienTais.size(); i++) {
+            if (dapAnHienTais.get(i).isDung()) {
+                viTriDung = i;
+                break;
+            }
+        }
+
+        if (viTriDung == 0) {
+            txvCauTL1.setText(dapAnHienTais.get(0).getNoiDungDapAn() + "        53 %");
+            txvCauTL2.setText(dapAnHienTais.get(1).getNoiDungDapAn() + "        13 %");
+            txvCauTL3.setText(dapAnHienTais.get(2).getNoiDungDapAn() + "        5 %");
+            txvCauTL4.setText(dapAnHienTais.get(3).getNoiDungDapAn() + "        29 %");
+        }
+        if (viTriDung == 1) {
+            txvCauTL1.setText(dapAnHienTais.get(0).getNoiDungDapAn() + "        30 %");
+            txvCauTL2.setText(dapAnHienTais.get(1).getNoiDungDapAn() + "        45 %");
+            txvCauTL3.setText(dapAnHienTais.get(2).getNoiDungDapAn() + "        6 %");
+            txvCauTL4.setText(dapAnHienTais.get(3).getNoiDungDapAn() + "        19 %");
+
+        }
+        if (viTriDung == 2) {
+            txvCauTL1.setText(dapAnHienTais.get(0).getNoiDungDapAn() + "        14 %");
+            txvCauTL2.setText(dapAnHienTais.get(1).getNoiDungDapAn() + "        15 %");
+            txvCauTL3.setText(dapAnHienTais.get(2).getNoiDungDapAn() + "        50 %");
+            txvCauTL4.setText(dapAnHienTais.get(3).getNoiDungDapAn() + "        21 %");
+        }
+        if (viTriDung == 3) {
+            txvCauTL1.setText(dapAnHienTais.get(0).getNoiDungDapAn() + "        20 %");
+            txvCauTL2.setText(dapAnHienTais.get(1).getNoiDungDapAn() + "        3 %");
+            txvCauTL3.setText(dapAnHienTais.get(2).getNoiDungDapAn() + "        1 %");
+            txvCauTL4.setText(dapAnHienTais.get(3).getNoiDungDapAn() + "        76 %");
+        }
+        troGiupKhanGia = false;
+    }
+
+
+
 
 
 }
