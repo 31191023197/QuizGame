@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "611954282417",
+    "firebase_url": "https://quizgame-68123-default-rtdb.firebaseio.com",
+    "project_id": "quizgame-68123",
+    "storage_bucket": "quizgame-68123.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:611954282417:android:742db39e9be3cc90cf3790",
+        "android_client_info": {
+          "package_name": "com.dumv.ailatrieuphu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "611954282417-tvcvsiia3dtf81e2g1vrhp1un7bci0cb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVhwvcfVnWZ6ZJddMHupLE889QZKGAVQg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "611954282417-tvcvsiia3dtf81e2g1vrhp1un7bci0cb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:611954282417:android:959b2db8edbf4781cf3790",
+        "android_client_info": {
+          "package_name": "com.example.quizgamefinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "611954282417-tvcvsiia3dtf81e2g1vrhp1un7bci0cb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVhwvcfVnWZ6ZJddMHupLE889QZKGAVQg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "611954282417-tvcvsiia3dtf81e2g1vrhp1un7bci0cb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:611954282417:android:835c7dd47084785ecf3790",
+        "android_client_info": {
+          "package_name": "com.example.testfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "611954282417-tvcvsiia3dtf81e2g1vrhp1un7bci0cb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVhwvcfVnWZ6ZJddMHupLE889QZKGAVQg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "611954282417-tvcvsiia3dtf81e2g1vrhp1un7bci0cb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
